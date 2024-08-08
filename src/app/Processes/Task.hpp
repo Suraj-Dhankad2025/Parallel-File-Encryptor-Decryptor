@@ -15,11 +15,12 @@ struct Task{
     string filePath;
     fstream f_stream;
     Action action;
-    Task(fstream &&stream, Action act, string filePath){
-        filePath = filePath;
-        action = act;
-        f_stream = move(stream);
-    }
+    // Task(fstream &&stream, Action act, string filePath){
+    //     filePath = filePath;
+    //     action = act;
+    //     f_stream = move(stream);
+    // }
+    Task(std::fstream&& stream, Action act, std::string filePath) : f_stream(std::move(stream)), action(act), filePath(filePath) {}
     string toString(){
         ostringstream oss;
         oss<<filePath<<","<<(action==Action::ENCRYPT ? "ENCRYPT":"DECRYPT");

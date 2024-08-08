@@ -1,18 +1,23 @@
 {
+    "version": "0.2.0",
     "configurations": [
         {
-            "name": "C/C++: clang build and debug active file",
-            "type": "cppdbg",
+            "name": "Debug encrypt_decrypt",
+            "type": "gdb",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/encrypt_decrypt",
             "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
-            "preLaunchTask": "C/C++: clang build active file"
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build",
+        },
+        {
+            "name": "Debug cryption (standalone)",
+            "type": "gdb",
+            "request": "launch",
+            "program": "${workspaceFolder}/cryption",
+            "args": ["your_task_data_here"],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build",
         }
-    ],
-    "version": "2.0.0"
+    ]
 }
